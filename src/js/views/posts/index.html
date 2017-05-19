@@ -1,0 +1,14 @@
+
+ <div ng-controller="PostsIndexCtrl as postsIndex" class="container">
+
+  <div class="container">
+    <div ng-repeat="post in postsIndex.all" class="post">
+      <img ui-sref="postsShow({id: post.id})" src="{{ post.image_src }}" width="200">
+      <div class="overlay">
+        <h3><a ui-sref="postsShow({id: post.id})">{{ post.title }}</a></h3>
+        <p>{{ post.body }}</p>
+        <p>Created by: {{ post.user.username }}</p>
+      </div>
+    </div>
+  </div>
+</div>

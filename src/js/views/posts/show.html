@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="posts_container">
+
+  <img ng-src="{{ postsShow.post.image_src }}" width="200">
+  <h2>{{ postsShow.post.title }}</h2>
+  <p>{{ postsShow.post.body }}</p>
+  <p>Created by: {{ postsShow.post.user.username }}</p>
+  <button ng-click="postsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === postsShow.post.user.id">Delete</button>
+    <button ui-sref="postsEdit({id: postsShow.post.id})" ng-if="main.isAuthenticated() && main.currentUser.id === postsShow.post.user.id">Edit</button>
+</div>
+
+<div class="comment_container">
+  <div class="" ng-if="main.isAuthenticated()">
+    <h2>Add Comment</h2>
+    <form ng-submit="postsShow.addComment()">
+      <textarea rows="5" cols="50" name="body" ng-model="postsShow.comment.body"></textarea>
+      <button>Post Comment</button>
+    </form>
+  </div>
+  <div class="">
+    <h3>Comments</h3>
+    <ul>
+      <li ng-repeat="comment in postsShow.post.comments">
+        <strong>{{ comment.user.username }}</strong> said: <br><span class="comment_text">"<em>{{ comment.body }}</em>"</span>
+        <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" style="margin-left: 0; color: rgba(250, 50, 50, 0.8); border: none; font-size: 12px; padding: 5px;">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
