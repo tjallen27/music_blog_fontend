@@ -9,6 +9,14 @@ PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope) {
   const vm = this;
   vm.all = Post.query();
+  var limitStep = 3;
+  $scope.limit = limitStep;
+  $scope.incrementLimit = function() {
+    $scope.limit += limitStep;
+  };
+  $scope.decrementLimit = function() {
+    $scope.limit -= limitStep;
+  };
 }
 
 PostsNewCtrl.$inject = ['Post', 'User', '$state'];

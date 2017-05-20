@@ -2,7 +2,7 @@
  <div ng-controller="PostsIndexCtrl as postsIndex" class="post-main">
 <h1>BADMASHER</h1>
   <div class="post-container">
-    <div ng-repeat="post in postsIndex.all  | orderBy: 'created_at':true " class="post">
+    <div ng-repeat="post in postsIndex.all  | orderBy: 'created_at':true | limitTo: limit" class="post">
       <div  ui-sref="postsShow({id: post.id})" class="image" style="background: url('{{ post.image_src }}'); background-size: cover; background-position: center;">
       </div>
       <div class="overlay">
@@ -11,5 +11,10 @@
         </p>
       </div>
     </div>
+
+  </div>
+  <div class="show-hide">
+    <a class="show-hide-btn" ng-click="incrementLimit()">SHOW MORE</a>
+    <a class="show-hide-btn" ng-click="decrementLimit()">show less</a>
   </div>
 </div>
