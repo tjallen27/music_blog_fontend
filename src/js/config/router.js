@@ -1,7 +1,7 @@
 angular
   .module('blog')
   .config(Router);
-  
+
 Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
@@ -9,7 +9,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'js/views/static/home.html'
+      templateUrl: 'js/views/posts/index.html'
     })
     .state('postsIndex', {
       url: '/posts',
@@ -45,6 +45,10 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/register',
       templateUrl: 'js/views/auth/register.html',
       controller: 'AuthCtrl as auth'
+    })
+    .state('about', {
+      url: '/about',
+      templateUrl: 'js/views/static/about.html'
     });
 
   $urlRouterProvider.otherwise('/');

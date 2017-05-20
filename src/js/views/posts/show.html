@@ -1,10 +1,9 @@
-<div class="container">
+<div class="show-container">
   <div class="posts_container">
 
   <img ng-src="{{ postsShow.post.image_src }}" width="200">
   <h2>{{ postsShow.post.title }}</h2>
-  <p>{{ postsShow.post.body }}</p>
-  <p>Created by: {{ postsShow.post.user.username }}</p>
+  <p class="post-body">{{ postsShow.post.body }}</p>
   <button ng-click="postsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === postsShow.post.user.id">Delete</button>
     <button ui-sref="postsEdit({id: postsShow.post.id})" ng-if="main.isAuthenticated() && main.currentUser.id === postsShow.post.user.id">Edit</button>
 </div>
@@ -17,7 +16,7 @@
       <button>Post Comment</button>
     </form>
   </div>
-  <div class="">
+  <!-- <div class="comments">
     <h3>Comments</h3>
     <ul>
       <li ng-repeat="comment in postsShow.post.comments">
@@ -25,6 +24,6 @@
         <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" style="margin-left: 0; color: rgba(250, 50, 50, 0.8); border: none; font-size: 12px; padding: 5px;">Delete</button>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
 </div>

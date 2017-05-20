@@ -11,84 +11,84 @@ function PostsIndexCtrl(Post, filterFilter, $scope) {
   vm.all = Post.query();
 }
 
-  PostsNewCtrl.$inject = ['Post', 'User', '$state'];
-  function PostsNewCtrl(Post, User, $state) {
-    const vm = this;
-    vm.post = {
-      "medium":"Post"
-    };
-    vm.users = User.query();
+PostsNewCtrl.$inject = ['Post', 'User', '$state'];
+function PostsNewCtrl(Post, User, $state) {
+  const vm = this;
+  vm.post = {
+    'image': 'http://placehold.it/350x150'
+  };
+  vm.users = User.query();
 
-    function postsCreate() {
-      Post
-        .save({ post: vm.post })
-        .$promise
-        .then(() => $state.go('postsIndex'));
-    }
-
-    vm.create = postsCreate;
+  function postsCreate() {
+    Post
+      .save({ post: vm.post })
+      .$promise
+      .then(() => $state.go('postsIndex'));
   }
 
-  PostsShowCtrl.$inject = ['Post', 'User', 'Comment','$stateParams', '$state', '$auth'];
-  function PostsShowCtrl(Post, User, Comment, $stateParams, $state, $auth) {
-    const vm = this;
+  vm.create = postsCreate;
+}
 
-    if ($auth.getPayload())
-      vm.currentUser = User.get({ id: $auth.getPayload().id });
+PostsShowCtrl.$inject = ['Post', 'User', 'Comment','$stateParams', '$state', '$auth'];
+function PostsShowCtrl(Post, User, Comment, $stateParams, $state, $auth) {
+  const vm = this;
 
-    vm.post = Post.get($stateParams);
-    vm.comment = {};
+  if ($auth.getPayload())
+    vm.currentUser = User.get({ id: $auth.getPayload().id });
 
-    function postsDelete() {
-      vm.post
-        .$remove()
-        .then(() => $state.go('postsIndex'));
-    }
-    vm.delete = postsDelete;
+  vm.post = Post.get($stateParams);
+  vm.comment = {};
 
-    function addComment() {
+  function postsDelete() {
+    vm.post
+      .$remove()
+      .then(() => $state.go('postsIndex'));
+  }
+  vm.delete = postsDelete;
+
+  function addComment() {
     vm.comment.post_id = vm.post.id;
     vm.comment.user_id = vm.currentUser.id;
-      Comment
-        .save({ comment: vm.comment })
-        .$promise
-        .then((comment) => {
-          vm.post.comments.push(comment);
-          vm.comment = {};
-        });
-    }
-
-    vm.addComment = addComment;
-
-    function deleteComment(comment) {
-      Comment
-        .delete({ id: comment.id })
-        .$promise
-        .then(() => {
-          const index = vm.post.comments.indexOf(comment);
-          vm.post.comments.splice(index, 1);
-        });
-    }
-
-    vm.deleteComment = deleteComment;
+    Comment
+      .save({ comment: vm.comment })
+      .$promise
+      .then((comment) => {
+        vm.post.comments.push(comment);
+        vm.comment = {};
+      });
   }
 
-  PostsEditCtrl.$inject = ['Post', 'User', '$stateParams', '$state'];
-  function PostsEditCtrl(Post, User, $stateParams, $state) {
-    const vm = this;
+  vm.addComment = addComment;
 
-    Post.get($stateParams).$promise.then((post) => {
-      vm.post = post;
-    });
-
-    vm.users = User.query();
-
-    function postsUpdate() {
-      Post
-        .update({id: vm.post.id, post: vm.post })
-        .$promise
-        .then(() => $state.go('postsShow', { id: vm.post.id }));
-    }
-
-    vm.update = postsUpdate;
+  function deleteComment(comment) {
+    Comment
+      .delete({ id: comment.id })
+      .$promise
+      .then(() => {
+        const index = vm.post.comments.indexOf(comment);
+        vm.post.comments.splice(index, 1);
+      });
   }
+
+  vm.deleteComment = deleteComment;
+}
+
+PostsEditCtrl.$inject = ['Post', 'User', '$stateParams', '$state'];
+function PostsEditCtrl(Post, User, $stateParams, $state) {
+  const vm = this;
+
+  Post.get($stateParams).$promise.then((post) => {
+    vm.post = post;
+  });
+
+  vm.users = User.query();
+
+  function postsUpdate() {
+    Post
+      .update({id: vm.post.id, post: vm.post })
+      .$promise
+      .then(() => $state.go('postsShow', { id: vm.post.id }));
+  }
+
+  vm.update = postsUpdate;
+}
