@@ -9,7 +9,7 @@ PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope) {
   const vm = this;
   vm.all = Post.query();
-  var limitStep = 3;
+  var limitStep = 15;
   $scope.limit = limitStep;
   $scope.incrementLimit = function() {
     $scope.limit += limitStep;

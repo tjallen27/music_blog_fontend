@@ -7,6 +7,7 @@
       </div>
       <div class="overlay">
         <h3><a ui-sref="postsShow({id: post.id})">{{ post.title }}</a></h3>
+        <p>{{ post.created_at}}</p>
         <p ng-init="limit = 150; moreShown = false">{{ post.body | limitTo: limit }}{{ text.length > limit?'...' :'...' }}
         </p>
       </div>
@@ -14,7 +15,6 @@
 
   </div>
   <div class="show-hide">
-    <a class="show-hide-btn" ng-click="incrementLimit()">SHOW MORE</a>
-    <a class="show-hide-btn" ng-click="decrementLimit()">show less</a>
+    <a class="show-hide-btn" ng-if=" > 3" ng-click="incrementLimit()">SHOW MORE</a>
   </div>
 </div>

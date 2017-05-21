@@ -7,6 +7,10 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+p {
+  font-size: 16px;
+}
+
 a {
   color: #F89406;
   cursor: pointer;
@@ -15,6 +19,29 @@ a {
 textarea,
 .post-body {
   white-space: pre-wrap;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  margin-left: 20px;
+  width: 500px;
+}
+
+label {
+  margin-top: 30px;
+}
+
+button {
+  margin: 20px;
+  background: #fff;
+  border: solid 1px #222;
+  padding: 10px;
+}
+
+form {
+  margin-top: 10px !important;
 }
 
 .navbar {
@@ -116,4 +143,25 @@ textarea,
   a {
     margin: 5px 10px;
   }
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile-label {
+    background: #222;
+    width: 131px;
+    padding: 14px;
+    text-align: center;
+    color: #fff;
+    border: solid 5px rgba(0, 0, 0, 0.1);
+    &:hover {
+      cursor: pointer;
+    }
 }
