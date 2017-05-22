@@ -1,3 +1,3 @@
 angular
   .module('blog', ['ui.router', 'ngResource', 'satellizer', 'checklist-model', 'ui.bootstrap', 'ngAnimate', 'ngMessages'])
-  .constant('API_URL', 'http://localhost:3000');
+  .constant('API_URL', 'https://desolate-reaches-84582.herokuapp.com');
