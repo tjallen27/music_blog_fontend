@@ -69,6 +69,10 @@ form {
   color: #222;
 }
 
+.navbar-default .navbar-nav > li > .login {
+  float: right;
+}
+
 @mixin make-wavy-line($size, $thickness, $color) {
     $spacing: $size / 1;
     $color-begin: $spacing - $thickness / 1;
