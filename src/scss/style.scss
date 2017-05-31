@@ -69,10 +69,6 @@ form {
   color: #222;
 }
 
-.navbar-default .navbar-nav > li > .login {
-  float: right;
-}
-
 @mixin make-wavy-line($size, $thickness, $color) {
     $spacing: $size / 1;
     $color-begin: $spacing - $thickness / 1;
@@ -179,4 +175,11 @@ iframe {
   right: 1%;
   float: right;
   height: 510px;
+}
+
+footer .login {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 14px;
 }
