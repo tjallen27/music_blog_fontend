@@ -171,15 +171,51 @@ form {
 
 iframe {
   position: absolute;
-  top:32%;
+  top:31.5%;
   right: 1%;
   float: right;
-  height: 510px;
+  height: 500px;
 }
 
 footer .login {
   position: absolute;
   top: 20px;
-  right: 15px;
+  left: 15px;
   font-size: 14px;
+}
+
+// iPhone portrait
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 680px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .post-main h1 {
+        text-align: center;
+        font-size: 50px;
+        letter-spacing: 5px;
+    }
+
+    .post-container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .post {
+      padding: 0;
+      width: 100%;
+      float: left;
+      height: 400px;
+
+      p {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    iframe {
+      display: none;
+    }
 }
