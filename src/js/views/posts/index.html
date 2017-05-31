@@ -6,7 +6,9 @@
       <div  ui-sref="postsShow({id: post.id})" class="image" style="background: url('{{ post.image_src }}'); background-size: cover; background-position: center;">
       </div>
       <div class="overlay">
+        <small>{{ post.created_at  | date:"dd-MM-yyyy" }}</small>
         <h3><a ui-sref="postsShow({id: post.id})">{{ post.title }}</a></h3>
+
         <p ng-init="limit = 150; moreShown = false">{{ post.body | limitTo: limit }}{{ text.length > limit?'...' :'...' }}
         </p>
       </div>

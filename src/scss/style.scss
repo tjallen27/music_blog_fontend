@@ -7,6 +7,11 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+h3 {
+  padding: 0;
+  margin: 0 0 10px;
+}
+
 p {
   font-size: 16px;
 }
@@ -14,6 +19,10 @@ p {
 a {
   color: #F89406;
   cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    color: #F07009;
+  }
 }
 
 textarea,
@@ -136,6 +145,10 @@ form {
   }
 }
 
+small {
+  color: #F89406;
+}
+
 .show-hide {
   position: fixed;
   bottom: 0;
@@ -171,7 +184,7 @@ form {
 
 iframe {
   position: absolute;
-  top:31.5%;
+  top:31.25%;
   right: 1%;
   float: right;
   height: 500px;
