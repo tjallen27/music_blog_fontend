@@ -225,11 +225,19 @@ iframe {
   height: 500px;
 }
 
-footer .login {
-  position: absolute;
-  top: 20px;
-  left: 15px;
-  font-size: 14px;
+footer{
+  .login {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 14px;
+  }
+  .register {
+    position: absolute;
+    top: 20px;
+    left: 75px;
+    font-size: 14px;
+  }
 }
 
 // iPhone portrait
