@@ -34,8 +34,26 @@ label,
 input,
 textarea {
   display: block;
-  margin-left: 20px;
-  width: 500px;
+  margin: 0 auto;
+  width: 700px;
+  button {
+    margin-left: 0;
+  }
+}
+
+.comment_container {
+  h2 {
+    text-align: center;
+  }
+  li {
+    list-style: none;
+    & .comment_text {
+      margin: 0;
+    }
+  }
+  .comments {
+
+  }
 }
 
 label {
@@ -43,7 +61,7 @@ label {
 }
 
 button {
-  margin: 20px;
+  margin: 20px 0;
   background: #fff;
   border: solid 1px #222;
   padding: 10px;

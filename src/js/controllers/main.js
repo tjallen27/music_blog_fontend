@@ -7,9 +7,9 @@ function MainCtrl($rootScope, $state, $auth) {
   const vm = this;
 
   $rootScope.$on('$stateChangeSuccess', () => {
-  if(vm.stateHasChanged) vm.message = null;
-  if(!vm.stateHasChanged) vm.stateHasChanged = true;
-  vm.isNavCollapsed = true;
+    if(vm.stateHasChanged) vm.message = null;
+    if(!vm.stateHasChanged) vm.stateHasChanged = true;
+    vm.isNavCollapsed = true;
   });
 
   vm.isAuthenticated = $auth.isAuthenticated;
