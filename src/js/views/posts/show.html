@@ -21,7 +21,7 @@
     <ul>
       <li ng-repeat="comment in postsShow.post.comments">
         <strong>{{ comment.user.username }}</strong> said: <p><span class="comment_text">"<em>{{ comment.body }}</em>"</span></p>
-        <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id || main.currentUser.id === 1" style="margin-top: -10px; color: rgba(250, 50, 50, 0.8); border: none; font-size: 14px; padding: 5px;">Delete</button>
+        <button ng-click="postsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id || main.isAuthenticated() && main.currentUser.id === 1" style="margin-top: -10px; color: rgba(250, 50, 50, 0.8); border: none; font-size: 14px; padding: 5px;">Delete</button>
       </li>
     </ul>
   </div>
