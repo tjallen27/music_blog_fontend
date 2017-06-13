@@ -33,14 +33,14 @@ textarea,
   white-space: pre-wrap;
 }
 
-label,
-input,
-textarea {
+.post_new label,
+.post_new input,
+.post_new textarea {
   display: block;
-  margin: 0 auto;
-  width: 700px;
+  margin-left: 10px;
+  width: 200px;
   button {
-    margin-left: 0;
+    margin-left: 10px;
   }
 }
 
@@ -64,7 +64,7 @@ label {
 }
 
 button {
-  margin: 20px 0;
+  margin: 20px 0 20px 10px;
   background: #fff;
   border: solid 1px #222;
   padding: 10px;
@@ -282,6 +282,28 @@ footer{
     top: 20px;
     left: 75px;
     font-size: 14px;
+  }
+}
+
+.login {
+  max-width: 200px;
+    margin-left: 10px;
+  input {
+    margin-left: 0;
+  }
+  button {
+    margin-left: 0;
+  }
+}
+
+.register {
+    max-width: 200px;
+    margin-left: 10px;
+  input {
+    margin-left: 0;
+  }
+  button {
+    margin-left: 0;
   }
 }
 
