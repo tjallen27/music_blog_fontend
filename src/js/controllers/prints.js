@@ -7,9 +7,10 @@ angular
 
 PostsIndexCtrl.$inject = ['Post', 'filterFilter', '$scope'];
 function PostsIndexCtrl(Post, filterFilter, $scope) {
+
   const vm = this;
   vm.all = Post.query();
-  $scope.pageSize = 3;
+  $scope.pageSize = 6;
   $scope.currentPage = 1;
 }
 
