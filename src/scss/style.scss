@@ -44,6 +44,13 @@ textarea,
   }
 }
 
+.ad {
+  display: block;
+  max-width: 75%;
+  margin: 10px auto;
+  clear:both;
+}
+
 .comment_container {
   h2 {
     text-align: center;
@@ -212,8 +219,8 @@ form {
 
 .post {
   padding: 20px;
-  width: 33%;
-  height: 520px;
+  width: 50%;
+  height: 450px;
   float: left;
 
   img {
@@ -264,10 +271,10 @@ small {
 
 iframe {
   position: absolute;
-  top:35%;
+  top:47.5%;
   right: 1%;
   float: right;
-  height: 500px;
+  height: 900px;
 }
 
 footer{
@@ -324,6 +331,14 @@ footer{
 
     h3 {
       font-size: 14px;
+    }
+
+    .pagination {
+      margin-bottom: 5px;
+      margin-left: 20%;
+      a {
+        font-size: 10px;
+      }
     }
 
     .post-container {
