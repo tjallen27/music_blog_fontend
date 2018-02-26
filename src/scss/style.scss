@@ -1,13 +1,11 @@
 // Import all of your scss files here
 body {
-  font-family: 'Quicksand', sans-serif;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
 }
 
 h3 {
@@ -64,21 +62,6 @@ textarea,
   .comments {
 
   }
-}
-
-label {
-  margin-top: 30px;
-}
-
-button {
-  margin: 20px 0 20px 10px;
-  background: #fff;
-  border: solid 1px #222;
-  padding: 10px;
-}
-
-form {
-  margin-top: 10px !important;
 }
 
 .pagination {
@@ -154,34 +137,6 @@ form {
 
 .navbar-default .navbar-nav > li > a {
   color: #222;
-  font-family: 'Playfair Display', serif;
-}
-
-@mixin make-wavy-line($size, $thickness, $color) {
-    $spacing: $size / 1;
-    $color-begin: $spacing - $thickness / 1;
-    $color-end: $spacing + $thickness / 1;
-
-    height: $size;
-    background:
-        linear-gradient(45deg,
-            transparent $color-begin,
-            $color $color-begin,
-            $color $color-end,
-            transparent $color-end
-        ),
-        linear-gradient(135deg,
-            transparent $color-begin,
-            $color $color-begin,
-            $color $color-end,
-            transparent $color-end
-        ) $size 0;
-    background-size: $size * 2 $size;
-}
-
-.small {
-    @include make-wavy-line(15px, 1px, #F89406);
-    margin-top: -20px;
 }
 
 .post-main {
@@ -248,27 +203,6 @@ small {
   }
 }
 
-.inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.inputfile-label {
-    background: #222;
-    width: 131px;
-    padding: 14px;
-    text-align: center;
-    color: #fff;
-    border: solid 5px rgba(0, 0, 0, 0.1);
-    &:hover {
-      cursor: pointer;
-    }
-}
-
 iframe {
   position: absolute;
   top:35%;
@@ -282,13 +216,11 @@ footer{
     position: absolute;
     top: 20px;
     left: 15px;
-    font-size: 14px;
   }
   .register {
     position: absolute;
     top: 20px;
     left: 75px;
-    font-size: 14px;
   }
 }
 
